@@ -4,6 +4,7 @@ CaloPlan 的 middleware / 基础能力层 — 基于 `localStorage` 的 producer
 
 它不感知 CaloPlan 的任何业务实体（User / Food / Meal / Nutrition 等），只做一件事：
 **register 提供数据生产方式，get 优先使用缓存，refresh 强制重新生产，delete 清除缓存。**
+
 ## 相关项目（CaloPlan 全家桶）
 
 CaloPlan 全栈项目统一托管在 GitHub Organization [caloplan](https://github.com/caloplan)：
