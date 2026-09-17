@@ -4,6 +4,23 @@ CaloPlan 的 middleware / 基础能力层 — 基于 `localStorage` 的 producer
 
 它不感知 CaloPlan 的任何业务实体（User / Food / Meal / Nutrition 等），只做一件事：
 **register 提供数据生产方式，get 优先使用缓存，refresh 强制重新生产，delete 清除缓存。**
+## 相关项目（CaloPlan 全家桶）
+
+CaloPlan 全栈项目统一托管在 GitHub Organization [caloplan](https://github.com/caloplan)：
+
+| 类型 | 项目 | 与本项目关系 |
+| --- | --- | --- |
+| 前端 | [coloplan-v2](https://github.com/caloplan/coloplan-v2) | 上层客户端：消费本模块的缓存能力 |
+| SDK | [caloplan-core](https://github.com/caloplan/caloplan-core) | 餐食 / 食物模块（缓存经本模块注入） |
+| SDK | [caloplan-user](https://github.com/caloplan/caloplan-user) | 用户模块（Token 持久化等） |
+| SDK | [caloplan-chat](https://github.com/caloplan/caloplan-chat) | AI 对话模块（本地聊天历史经本模块缓存） |
+| SDK（本仓库） | [caloplan-cache](https://github.com/caloplan/caloplan-cache) | 通用缓存基础能力（业务无关） |
+| 服务 | [fastapi-chat-service](https://github.com/caloplan/fastapi-chat-service) | AI 对话后端 |
+| 服务 | [fastapi-file-service](https://github.com/caloplan/fastapi-file-service) | 图片上传后端 |
+| 服务 | [mservice-fastapi-user](https://github.com/caloplan/mservice-fastapi-user) | 认证 / 用户微服务 |
+| 服务 | [mservice-fastapi-metastorage](https://github.com/caloplan/mservice-fastapi-metastorage) | 元数据微服务 |
+
+本模块为业务无关的通用基础层：不感知任何业务实体，被 `caloplan-chat` / `coloplan-v2` 等上层复用。
 
 ## 核心思想
 
